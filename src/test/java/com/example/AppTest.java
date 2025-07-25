@@ -1,13 +1,12 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.example;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class AppTest {
-
     @Test
-    public void testApp() {
+    public void testGetGreeting() {
         App app = new App();
-        // Assuming App has a method called getGreeting that returns a greeting message
-        String expectedGreeting = "Hello, World!";
-        assertEquals(expectedGreeting, app.getGreeting());
+        assertEquals("Hello, World!", app.getGreeting());
     }
 }
