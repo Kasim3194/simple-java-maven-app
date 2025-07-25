@@ -1,18 +1,40 @@
-@Test
-public void testDoGet() throws Exception {
-    StringWriter stringWriter = new StringWriter();
-    PrintWriter writer = new PrintWriter(stringWriter);
+package com.example;
 
-    when(response.getWriter()).thenReturn(writer);
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.junit.Before;
+import org.junit.Test;
 
-    servlet.doGet(request, response);
-    writer.flush();
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
-    String output = stringWriter.toString();
+import static org.mockito.Mockito.*;
+import static org.junit.Assert.*;
 
-    // Print actual output for confirmation
-    System.out.println("Servlet Output: " + output);
+public class HelloServletTest {
 
-    // Update assertion to match actual response
-    assertTrue(output.contains("Hello, Students!"));
+    private HelloServlet servlet;
+    private HttpServletRequest request;
+    private HttpServletResponse response;
+
+    @Before
+    public void setUp() {
+        servlet = new HelloServlet();
+        request = mock(HttpServletRequest.class);
+        response = mock(HttpServletResponse.class);
+    }
+
+    @Test
+    public void testDoGet() throws Exception {
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+
+        servlet.doGet(request, response);
+        writer.flush();
+
+        String output = stringWriter.toString();
+        System.out.println("Servlet Output: " + output);
+        assertTrue(output.contains("Hello, Students!"));
+    }
 }
