@@ -14,7 +14,7 @@ public class HelloServlet extends HttpServlet {
             throws IOException {
         resp.setContentType("text/plain");
         resp.getWriter().write("Hello, Students!");
-        resp.getWriter().write("Welcome to NewGen!");
+        
     }
 }
 
