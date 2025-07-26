@@ -20,6 +20,7 @@ public class HelloServlet extends HttpServlet {
                 "<head><title>Welcome Page</title></head>" +
                 "<body>" +
                 "<h1>Hello, Students! 👋</h1>" +
+                "<h1>Welcome to NewGen Software! 👋</h1>" +
                 "<p><strong>App:</strong> Simple Java Maven App</p>" +
                 "<p><strong>Environment:</strong> Production</p>" +
                 "<p><strong>Version:</strong> 1.0-SNAPSHOT</p>" +
